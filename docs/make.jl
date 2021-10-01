@@ -1,6 +1,3 @@
-import Pkg
-Pkg.activate("..")
-
 using Documenter, TrigPolys
 
 makedocs(
