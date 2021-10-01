@@ -4,7 +4,7 @@ using TrigPolys
 @testset "Arithmetic" begin
     p1 = random_trig_poly(102)
     p2 = random_trig_poly(201)
-    x = range(0,2*pi, length=2000)
+    x = range(0; stop=2*pi, length=2000)
 
     @test isapprox((-p1).(x), -(p1.(x)))
     @test isapprox((p1 + p2).(x), p1.(x) .+ p2.(x))
