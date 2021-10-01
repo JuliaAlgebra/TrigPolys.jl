@@ -1,12 +1,15 @@
+import Pkg
+Pkg.activate("..")
+
 using Documenter, TrigPolys
 
 makedocs(
-    sitename="TrigPoly",
+    sitename="TrigPolys",
 
     format = Documenter.HTML(
         # See https://github.com/JuliaDocs/Documenter.jl/issues/868
         prettyurls = get(ENV, "CI", nothing) == "true"
-    )
+    ),
 
     pages = [
         "Introduction" => "index.md",
@@ -14,5 +17,5 @@ makedocs(
 )
 
 deploydocs(
-    repo   = "github.com/yuanchenyang/TrigPoly.jl.git",
+    repo   = "github.com/yuanchenyang/TrigPolys.jl.git",
 )
