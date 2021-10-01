@@ -11,3 +11,12 @@
 
 
 ## Introduction
+
+
+[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
+[docs-latest-img]: https://img.shields.io/badge/docs-latest-blue.svg
+[docs-stable-url]: https://yuanchenyang.github.io/TrigPolys.jl/dev/
+[docs-latest-url]: https://yuanchenyang.github.io/TrigPolys.jl/dev/
+
+[build-img]: https://github.com/yuanchenyang/TrigPolys.jl/workflows/CI.yml/badge.svg?branch=master
+[build-url]: https://github.com/yuanchenyang/TrigPolys.jl/actions?query=workflow%3ACI
