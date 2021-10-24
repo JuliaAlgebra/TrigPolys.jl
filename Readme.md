@@ -18,5 +18,5 @@
 [docs-stable-url]: https://yuanchenyang.github.io/TrigPolys.jl/dev/
 [docs-latest-url]: https://yuanchenyang.github.io/TrigPolys.jl/dev/
 
-[build-img]: https://github.com/yuanchenyang/TrigPolys.jl/workflows/CI.yml/badge.svg?branch=master
+[build-img]: https://github.com/yuanchenyang/TrigPolys.jl/workflows/CI/badge.svg?branch=master
 [build-url]: https://github.com/yuanchenyang/TrigPolys.jl/actions?query=workflow%3ACI
