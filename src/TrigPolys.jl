@@ -8,10 +8,10 @@ export pad_to, truncate
 # Represents a trigonometric polynomial by its coefficients
 struct TrigPoly
     a0::Number                  # Constant coefficient
-    ac::AbstractArray{Number}   # cos coefficients
-    as::AbstractArray{Number}   # sin coefficients
+    ac::AbstractArray{Float64}   # cos coefficients
+    as::AbstractArray{Float64}   # sin coefficients
     function TrigPoly(a0, ac, as)
-        length(ac) == length(as), "sin and cos coefficients must have same length!"
+        @assert length(ac) == length(as) "sin and cos coefficients must have same length!"
         new(a0, ac, as)
     end
 end
