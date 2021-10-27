@@ -10,20 +10,21 @@ struct TrigPoly{T<:AbstractFloat, VT<:AbstractVector{T}}
     a0::T    # Constant coefficient
     ac::VT   # cos coefficients
     as::VT   # sin coefficients
-    function TrigPoly(a0::S, ac::VS, as::VS) where {S <:AbstractFloat, VS<:AbstractVector{S}}
+    function TrigPoly(a0::S, ac::VS, as::VS) where {S<:AbstractFloat, VS<:AbstractVector{S}}
         @assert length(ac) == length(as) "sin and cos coefficients must have same length!"
         new{S, VS}(a0, ac, as)
     end
 end
 
+TrigPoly(a0::S, ac::VT, as::VU) where {
+    S<:Number, T<:Number, U<:Number, VT<:AbstractVector{T}, VU<:AbstractVector{U}
+} = TrigPoly(float(a0), float(ac), float(as))
 TrigPoly(a::AbstractFloat) = TrigPoly(a, typeof(a)[], typeof(a)[])
 TrigPoly(a::Number) = TrigPoly(float(a))
 
 a0(p::TrigPoly) = p.a0
 ac(p::TrigPoly) = p.ac
 as(p::TrigPoly) = p.as
-
-degree(p::TrigPoly) = 2 * p.n + 1
 
 function Base.getproperty(p::TrigPoly, v::Symbol)
     if v == :n
@@ -33,14 +34,16 @@ function Base.getproperty(p::TrigPoly, v::Symbol)
     end
 end
 
-function get_mn(u::AbstractArray)
+degree(p::TrigPoly) = 2 * p.n + 1
+
+function get_mn(u::AbstractVector)
     m = length(u)
     @assert m % 2 == 1 "Only odd-length vectors supported!"
     n = (m - 1)÷2
     (m,n)
 end
 
-function TrigPoly(u::AbstractArray)
+function TrigPoly(u::AbstractVector{T}) where {T<:AbstractFloat}
     m, n = get_mn(u)
     TrigPoly(u[1], u[2:n+1], u[n+2:m])
 end
@@ -75,12 +78,12 @@ Base.:*(p::TrigPoly, a::Number)     = *(promote(p, a)...)
 Base.:/(p::TrigPoly, a::Number)     = p * (1/a)
 
 Base.promote_rule(::Type{TrigPoly{S, VS}}, ::Type{T}) where {S<:AbstractFloat,VS<:AbstractVector{S},T<:Number} = TrigPoly{S, VS}
-Base.convert(::Type{TrigPoly{S, VS}}, x::T) where {S<:AbstractFloat,VS<:AbstractVector{S},T<:Number} = TrigPoly(x)
+Base.convert(::Type{TrigPoly{S, VS}}, x::T) where {S<:AbstractFloat,VS<:AbstractVector{S},T<:Number} = TrigPoly(S(x))
 
 # Increase the maxdegree of a TrigPoly **to** n
-function pad_to(p::TrigPoly, n::Integer)
+function pad_to(p::TrigPoly{T,VT}, n::Integer) where {T<:AbstractFloat, VT<:AbstractVector{T}}
     @assert n >= p.n "Cannot pad to smaller degree!"
-    TrigPoly(a0(p), [ac(p); zeros(n-p.n)], [as(p); zeros(n-p.n)])
+    TrigPoly(a0(p), VT([ac(p); zeros(n-p.n)]), VT([as(p); zeros(n-p.n)]))
 end
 
 function pad_to(v, n::Integer)

@@ -20,6 +20,18 @@ using TrigPolys
     @test p1 / pi == p1 * (1/pi)
 end
 
+@testset "Type Conversion and Promotion" begin
+    F1 = Float32
+    F2 = Float64
+    VF1 = Vector{F1}
+    VF2 = Vector{F2}
+    @test typeof(TrigPoly(F2(4))+F1(3)) == TrigPoly{F2, VF2}
+    @test typeof(convert(TrigPoly{F2, VF2}, F1(.3))) == TrigPoly{F2, VF2}
+    @test typeof(convert(TrigPoly{F1, VF1}, F2(.3))) == TrigPoly{F1, VF1}
+    @test typeof(TrigPoly(F1(2))+TrigPoly(F2(3))) == TrigPoly{F2, VF2}
+    @test typeof(TrigPoly(F1(2))+F1(3)) == TrigPoly{F1, VF1}
+end
+
 @testset "Evaluate and interpolate" begin
     n = 1000
     p = random_trig_poly(n)
