@@ -6,17 +6,18 @@ export TrigPoly, random_trig_poly, evaluate, evaluateT, interpolatev, interpolat
 export pad_to, truncate
 
 # Represents a trigonometric polynomial by its coefficients
-struct TrigPoly
-    a0::Number                  # Constant coefficient
-    ac::AbstractArray{Float64}   # cos coefficients
-    as::AbstractArray{Float64}   # sin coefficients
-    function TrigPoly(a0, ac, as)
+struct TrigPoly{T<:AbstractFloat, VT<:AbstractVector{T}}
+    a0::T    # Constant coefficient
+    ac::VT   # cos coefficients
+    as::VT   # sin coefficients
+    function TrigPoly(a0::S, ac::VS, as::VS) where {S <:AbstractFloat, VS<:AbstractVector{S}}
         @assert length(ac) == length(as) "sin and cos coefficients must have same length!"
-        new(a0, ac, as)
+        new{S, VS}(a0, ac, as)
     end
 end
 
-TrigPoly(a::Number) = TrigPoly(a, [], [])
+TrigPoly(a::AbstractFloat) = TrigPoly(a, typeof(a)[], typeof(a)[])
+TrigPoly(a::Number) = TrigPoly(float(a))
 
 a0(p::TrigPoly) = p.a0
 ac(p::TrigPoly) = p.ac
@@ -73,8 +74,8 @@ Base.:*(p::TrigPoly, a::Number)     = *(promote(p, a)...)
 
 Base.:/(p::TrigPoly, a::Number)     = p * (1/a)
 
-Base.promote_rule(::Type{TrigPoly}, ::Type{T}) where {T<:Number} = TrigPoly
-Base.convert(::Type{TrigPoly}, x::T) where {T<:Number} = TrigPoly(x)
+Base.promote_rule(::Type{TrigPoly{S, VS}}, ::Type{T}) where {S<:AbstractFloat,VS<:AbstractVector{S},T<:Number} = TrigPoly{S, VS}
+Base.convert(::Type{TrigPoly{S, VS}}, x::T) where {S<:AbstractFloat,VS<:AbstractVector{S},T<:Number} = TrigPoly(x)
 
 # Increase the maxdegree of a TrigPoly **to** n
 function pad_to(p::TrigPoly, n::Integer)
