@@ -12,7 +12,7 @@
 
 ## Introduction
 
-[TrigPolys.jl](https://github.com/yuanchenyang/TrigPolys.jl) is a package for
+[TrigPolys.jl](https://github.com/JuliaAlgebra/TrigPolys.jl) is a package for
 fast manipulation of trigonometric polynomials.
 
 
@@ -44,8 +44,8 @@ end
 
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
 [docs-latest-img]: https://img.shields.io/badge/docs-latest-blue.svg
-[docs-stable-url]: https://yuanchenyang.github.io/TrigPolys.jl/dev/
-[docs-latest-url]: https://yuanchenyang.github.io/TrigPolys.jl/dev/
+[docs-stable-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev/
+[docs-latest-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev/
 
-[build-img]: https://github.com/yuanchenyang/TrigPolys.jl/workflows/CI/badge.svg?branch=master
-[build-url]: https://github.com/yuanchenyang/TrigPolys.jl/actions?query=workflow%3ACI
+[build-img]: https://github.com/JuliaAlgebra/TrigPolys.jl/workflows/CI/badge.svg?branch=master
+[build-url]: https://github.com/JuliaAlgebra/TrigPolys.jl/actions?query=workflow%3ACI
