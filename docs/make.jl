@@ -14,5 +14,5 @@ makedocs(
 )
 
 deploydocs(
-    repo   = "github.com/yuanchenyang/TrigPolys.jl.git",
+    repo   = "github.com/JuliaAlgebra/TrigPolys.jl.git",
 )
