@@ -31,3 +31,37 @@ function Base.:*(p1::TrigPoly, p2::TrigPoly)
     interpolate(evaluate(pad_to(p1, n)) .* evaluate(pad_to(p2, n)))
 end
 ```
+
+## Construction and Convertion
+```@docs
+TrigPolys.TrigPoly
+TrigPolys.TrigPoly(a::Number)
+TrigPolys.TrigPoly(u::AbstractVector{T}) where {T<:AbstractFloat}
+TrigPolys.a0
+TrigPolys.ac
+TrigPolys.as
+TrigPolys.n
+TrigPolys.degree
+```
+
+## Methods
+
+```@docs
+Base.vec(p::TrigPoly)
+Base.:(==)(p1::TrigPoly, p2::TrigPoly)
+Base.:+(p1::TrigPoly, p2::TrigPoly)
+Base.:*(p1::TrigPoly, p2::TrigPoly)
+Base.:/(p::TrigPoly, a::Number)
+```
+
+## Functions
+```@docs
+TrigPolys.pad_to
+TrigPolys.pad_by
+TrigPolys.random_trig_poly
+TrigPolys.basis
+TrigPolys.evaluate
+TrigPolys.evaluateT
+TrigPolys.interpolatev
+TrigPolys.interpolate
+```
