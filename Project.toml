@@ -3,12 +3,12 @@ uuid = "bbdedc48-cb31-4a37-9fe3-b015aecc8dd3"
 authors = ["Chenyang Yuan <yuanchenyang@gmail.com>"]
 version = "0.1.0"
 
-[compat]
-julia = "1"
-FFTW = "1"
-
 [deps]
 FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+
+[compat]
+FFTW = "1"
+julia = "1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
