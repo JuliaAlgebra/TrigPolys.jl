@@ -8,6 +8,9 @@ makedocs(
         prettyurls = get(ENV, "CI", nothing) == "true"
     ),
 
+    # See https://github.com/jump-dev/JuMP.jl/issues/1576
+    strict = true,
+
     pages = [
         "Introduction" => "index.md",
     ]
@@ -15,4 +18,6 @@ makedocs(
 
 deploydocs(
     repo   = "github.com/JuliaAlgebra/TrigPolys.jl.git",
+
+    push_preview = true,
 )
