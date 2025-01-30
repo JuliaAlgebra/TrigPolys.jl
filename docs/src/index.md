@@ -14,7 +14,7 @@ R(\\omega) = a_0 + \\sum_{k=1}^n a_{c,k} \\cos(k\\omega) + a_{s,k} \\sin(k\\omeg
 ```
 where ``a_{c,k}`` is `ac[k]` and ``a_{s,k}`` is `as[k]`.
 
-[D17] ...
+[D17] Dumitrescu, Bogdan. Positive trigonometric polynomials and signal processing applications. Vol. 103. Berlin: Springer, 2007.
 
 The polynomial $$p(x)$$ can be represented either by $$2n+1$$ coefficients
 $$a_k$$ or by evaluations at $$2n+1$$ distinct points in the interval
