@@ -1,16 +1,16 @@
 # TrigPolys
 
-[TrigPolys.jl](https://github.com/yuanchenyang/TrigPolys.jl) is a package for
+[TrigPolys.jl](https://github.com/JuliaAlgebra/TrigPolys.jl) is a package for
 fast manipulation of trigonometric polynomials.
 
 A *Hermitian trigonometric polynomial*
-can be viewed as a polynomial `R(z) \\in \\mathbb{C}[z]` [D17, (1.7)]:
+can be viewed as a polynomial ``R(z) \in \mathbb{C}[z]`` [D17, (1.7)]:
 ```math
-R(z) = a_0 + \\frac{1}{2} \\sum_{k=1}^n a_k z^{-k} + a_k^* z^k
+R(z) = a_0 + \frac{1}{2} \sum_{k=1}^n a_k z^{-k} + a_k^* z^k
 ```
 On the unit circle, this becomes [D17, (1.8)]:
 ```math
-R(\\omega) = a_0 + \\sum_{k=1}^n a_{c,k} \\cos(k\\omega) + a_{s,k} \\sin(k\\omega)
+R(\omega) = a_0 + \sum_{k=1}^n a_{c,k} \cos(k\omega) + a_{s,k} \sin(k\omega)
 ```
 where ``a_{c,k}`` is `ac[k]` and ``a_{s,k}`` is `as[k]`.
 

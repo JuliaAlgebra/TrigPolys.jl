@@ -45,10 +45,10 @@ end
 
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
 [docs-latest-img]: https://img.shields.io/badge/docs-latest-blue.svg
-[docs-stable-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev/
-[docs-latest-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev/
+[docs-stable-url]: https://juliaalgebra.github.io/TrigPolys.jl/stable
+[docs-latest-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev
 
-[build-img]: https://github.com/JuliaAlgebra/TrigPolys.jl/actions/workflows/ci.yml/badge.svg?branch=master
+[build-img]: https://github.com/JuliaAlgebra/TrigPolys.jl/actions/workflows/CI.yml/badge.svg?branch=master
 [build-url]: https://github.com/JuliaAlgebra/TrigPolys.jl/actions?query=workflow%3ACI
 [codecov-img]: https://codecov.io/gh/JuliaAlgebra/TrigPolys.jl/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/JuliaAlgebra/TrigPolys.jl/branch/master
