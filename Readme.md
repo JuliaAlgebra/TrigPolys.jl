@@ -2,7 +2,8 @@
 
 | **Documentation** | **Build Status** |
 |:-----------------:|:----------------:|
-| [![][docs-latest-img]][docs-latest-url] | [![Build Status][build-img]][build-url] |
+| [![][docs-stable-img]][docs-stable-url] | [![Build Status][build-img]][build-url] |
+| [![][docs-latest-img]][docs-latest-url] | [![Codecov branch][codecov-img]][codecov-url] |
 
 
 ## Documentation
@@ -47,5 +48,7 @@ end
 [docs-stable-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev/
 [docs-latest-url]: https://juliaalgebra.github.io/TrigPolys.jl/dev/
 
-[build-img]: https://github.com/JuliaAlgebra/TrigPolys.jl/workflows/CI/badge.svg?branch=master
+[build-img]: https://github.com/JuliaAlgebra/TrigPolys.jl/actions/workflows/ci.yml/badge.svg?branch=master
 [build-url]: https://github.com/JuliaAlgebra/TrigPolys.jl/actions?query=workflow%3ACI
+[codecov-img]: https://codecov.io/gh/JuliaAlgebra/TrigPolys.jl/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/JuliaAlgebra/TrigPolys.jl/branch/master
